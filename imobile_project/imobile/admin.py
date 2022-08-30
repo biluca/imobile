@@ -5,7 +5,7 @@ from .models import Person, Property, Sale, Feature, Adress, PropertyFeature
 
 
 class PersonAdmin(ModelAdmin):
-    list_display = ("id", "name", "birthday", "document", "phone", "email")
+    list_display = ("id", "name", "get_birthday_str", "get_document_str", "get_phone_str", "email")
 
 
 class FeatureInline(TabularInline):
@@ -21,11 +21,12 @@ class AdressInline(TabularInline):
 class PropertyAdmin(ModelAdmin):
     list_display = (
         "id",
+        "owner",
         "code",
         "category",
-        "commision",
-        "value",
-        "created_at",
+        "get_comission_str",
+        "get_value_str",
+        "get_create_time_str",
         "status",
     )
 
@@ -37,7 +38,7 @@ class FeatureAdmin(ModelAdmin):
 
 
 class SaleAdmin(ModelAdmin):
-    list_display = ("id", "value", "commision", "buyer", "seller", "agent")
+    list_display = ("id", "get_value_str", "get_comission_str", "buyer", "seller", "agent")
 
 
 Site.register(Person, PersonAdmin)
