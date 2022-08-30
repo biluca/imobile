@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.vscode/settings.json
+imobile_project/imobile_project/settings.py
